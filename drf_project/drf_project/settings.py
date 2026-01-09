@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "rest_framework"
-    "drf_app",
+    "rest_framework",
+    "def_app",
 ]
 
 MIDDLEWARE = [
@@ -77,8 +77,13 @@ WSGI_APPLICATION = 'drf_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rest',
+        "USER":"root",
+        "PASSWORD":"",  
+        "HOST":"localhost",
+        "PORT":3306
+        
     }
 }
 
@@ -123,3 +128,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#for custom user model
+AUTH_USER_MODEL = "def_app.User"
