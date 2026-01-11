@@ -14,6 +14,8 @@ def product_view(request):
         else:
             return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
         
-    if request.method=='GET':
+    elif request.method=='GET':
+        return Response()
+       
         
         
